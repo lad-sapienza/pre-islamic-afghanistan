@@ -1,0 +1,47 @@
+---
+title: "Browse all finds"
+date: "2023-10-01"
+slug: "all-finds"
+description: ""
+menu_position: 4
+---
+
+import { DataTb } from "../../modules/scms"
+
+<DataTb
+  source={{
+    dTable: "sculptures"
+  }}
+  striped={true}
+  columns={[
+  {
+    name: "Site",
+    sortable: true,
+    cell: item => (
+          <a href={`../record/?tb=sculptures&id=${item.id}`}>
+            {item["site"]} 
+          </a>
+        ),
+  },
+  {
+    name: "Area",
+    selector: row => row["area"],
+    sortable: true,
+  },
+  {
+    name: "Catalog number",
+    selector: row => row["catno"],
+    sortable: true,
+  },
+  {
+    name: "Type",
+    selector: row => row["type"],
+    sortable: true,
+  },
+  {
+    name: "Subject",
+    selector: row => row["subject"],
+    sortable: true,
+  },
+]}
+/>
