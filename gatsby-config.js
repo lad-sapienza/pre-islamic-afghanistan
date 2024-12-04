@@ -14,10 +14,10 @@ require("dotenv").config({
 module.exports = {
   pathPrefix: '/', //process.env.NODE_ENV === "production" ? "/sCMS/" : "/",
   siteMetadata: {
-    title: `s:CMS`,
-    description: `S:CMS | Static site Content Managemt System is developend and maintained by LAD: Laboratorio di Archeologia Digitale alla Sapienza`,
+    title: `Pre-Islamic Afghanistan`,
+    description: `Archaeology and cultural heritage of pre-Islamic Afghanistan: Sites and materials. With a focus on the Buddhist clay sculptures`,
     author: `Julian Bogdani <julian.bogdani@uniroma1.it>`,
-    siteUrl: `https://github.com/lab-archeologia-digitale/sCSM#readme`,
+    siteUrl: `https://github.com/lab-archeologia-digitale/pre-islamic-afghanistan`,
   },
   plugins: [
     `gatsby-plugin-image`,
