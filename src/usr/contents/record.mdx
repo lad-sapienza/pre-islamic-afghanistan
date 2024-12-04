@@ -7,34 +7,11 @@ description: ""
 
 import {Record, Field} from "../../modules/scms.js"
 
-<div className="row">
-  <div className="col-sm-4">
-    ```jsx
-    <Record>
-      - **Label**: <Field name={["Item_Label"]} />
-      - **URI**: <Field name={["URI"]} />
-      - **Project**: <Field name={["Project"]} />
-      - **Project_URI**: <Field name={["Project_URI"]} />
-      - **Project_URI**: <Field name={["Project_URI"]} />
-      - Coordinates:
-        - **Lng**: <Field name={["geometry", "coordinates", "0"]} />
-        - **Lat**: <Field name={["geometry", "coordinates", "1"]} />
-      - **Geometry type** (using a transformer function): <Field name={["geometry"]} transformer={ d => d.type }/>
-    </Record>
-    ```
-  </div>
-  <div className="col-sm-8">
-    <Record>
-      - **Label**: <Field name={["Item_Label"]} />
-      - **URI**: <Field name={["URI"]} />
-      - **Project**: <Field name={["Project"]} />
-      - **Project_URI**: <Field name={["Project_URI"]} />
-      - **Project_URI**: <Field name={["Project_URI"]} />
-      - Coordinates:
-        - **Lng**: <Field name={["geometry", "coordinates", "0"]} />
-        - **Lat**: <Field name={["geometry", "coordinates", "1"]} />
-      - **Geometry type** (using a transformer function): <Field name={["geometry"]} transformer={ d => d.type }/>
-      
-    </Record>
-  </div>
-</div>
+<Record fields="*,images.id,images.directus_files_id.*,bibliographical_reference.bibliography_id.short,bibliographical_reference.details">
+  <img src="https://db.lad-sapienza.it/narenj/assets/200d9691-cf47-44bc-a539-3a422d1085d8" />
+  - **Site**: <Field name={["site"]} />
+  - **Area**: <Field name={["Area"]} />
+  - **Catalog number**: <Field name={["catno"]} />
+  - **Type**: <Field name={["type"]} />
+  - **Subject**: <Field name={["subject"]} />
+</Record>
