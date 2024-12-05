@@ -8,10 +8,11 @@ description: ""
 import {Record, Field} from "../../modules/scms.js"
 
 <Record fields="*,images.id,images.directus_files_id.*,bibliographical_reference.bibliography_id.short,bibliographical_reference.details">
-  <img src="https://db.lad-sapienza.it/narenj/assets/200d9691-cf47-44bc-a539-3a422d1085d8" />
+  <img src="https://db.lad-sapienza.it/narenj/assets/200d9691-cf47-44bc-a539-3a422d1085d8/Tepe%20Narinj.jpg?key=thumb300by300" />  
   - **Site**: <Field name={["site"]} />
   - **Area**: <Field name={["Area"]} />
   - **Catalog number**: <Field name={["catno"]} />
   - **Type**: <Field name={["type"]} />
   - **Subject**: <Field name={["subject"]} />
+  - **Other**: <Field name={["images", "directus_files_id"]} />
 </Record>
