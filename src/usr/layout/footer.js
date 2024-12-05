@@ -10,6 +10,7 @@ const FooterSection = () => {
       <Container>
         <div className="d-flex flex-row align-items-center mb-3">
           <div className="p-3">
+            Powered by<br />
             <Link to="/">
               <StaticImage
                 src="../../images/scms-lad.png"
@@ -23,8 +24,7 @@ const FooterSection = () => {
           </div>
           <div className="p-3 border-start border-primary">
             <p className="p-s-3">
-              <strong>s:CMS</strong> è un progetto ideato e sviluppato dal{" "}
-              <br />
+              Build with ♥ by {' '}
               <a
                 href="https://lad.saras.uniroma1.it"
                 target="_blank"
@@ -32,22 +32,9 @@ const FooterSection = () => {
               >
                 LAD: Laboratorio di Archeologia Digitale alla Sapienza
               </a>
-              <br />
-              <a
-                href="https://github.com/lab-archeologia-digitale/sCMS"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Code
-              </a>
-              &nbsp;|&nbsp;
-              <a
-                href="https://github.com/lab-archeologia-digitale/sCMS/issues"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Issues
-              </a>
+              <hr />
+              <p>Copyright and credits: Italian Archaeological Mission in Afghanistan</p>
+              <p><a href="mailto:afiligenzi@unior.it">afiligenzi@unior.it</a></p>
             </p>
           </div>
         </div>

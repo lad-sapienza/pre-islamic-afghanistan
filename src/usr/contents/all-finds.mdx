@@ -17,11 +17,7 @@ import { DataTb } from "../../modules/scms"
   {
     name: "Site",
     sortable: true,
-    cell: item => (
-          <a href={`../record/?tb=sculptures&id=${item.id}`}>
-            {item["site"]} 
-          </a>
-        ),
+    selector: row => row["site"],
   },
   {
     name: "Area",
@@ -30,7 +26,11 @@ import { DataTb } from "../../modules/scms"
   },
   {
     name: "Catalog number",
-    selector: row => row["catno"],
+    cell: item => (
+          <a href={`../record/?tb=sculptures&id=${item.id}`}>
+            {item["catno"]} 
+          </a>
+        ),
     sortable: true,
   },
   {

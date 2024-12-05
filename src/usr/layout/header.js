@@ -1,6 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { Container } from "react-bootstrap"
 
@@ -8,20 +6,10 @@ const HeaderSection = ({ siteTitle }) => (
   <Header>
     <Container>
       <div className="d-sm-flex align-items-center text-center">
-        <Link to={"/"}>
-          <StaticImage
-            src="../../images/scms-lad.png"
-            width={150}
-            quality={80}
-            formats={["AUTO", "WEBP"]}
-            alt={siteTitle}
-            className="img-fluid"
-          />
-        </Link>
         <div className="text-start ms-3">
-          <h1>s:CMS</h1>
-          <p className="lead">Static site Content Management System is developend and
-          maintained by LAD: Laboratorio di Archeologia Digitale alla Sapienza</p>
+          <img src="https://db.lad-sapienza.it/narenj/assets/5183a061-2f31-4929-b86b-0cbeda06d1ff?fit=cover&width=1500&height=350&quality=50" className="img-fluid"/>
+          <h1>Pre-Islamic Afghanistan</h1>
+          <p className="lead">Archaeology and cultural heritage of pre-Islamic Afghanistan: Sites and materials. With a focus on the Buddhist clay sculptures</p>
         </div>
       </div>
     </Container>
@@ -29,8 +17,7 @@ const HeaderSection = ({ siteTitle }) => (
 )
 
 const Header = styled.header`
-  background-color: #fe04fc;
-  color: #ffffff;
+  background-color: #ebebeb;
   margin-bottom: 5rem;
 
   .gatsby-image-wrapper {
