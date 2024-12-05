@@ -12,7 +12,7 @@ require("dotenv").config({
  */
 
 module.exports = {
-  pathPrefix: '/', //process.env.NODE_ENV === "production" ? "/sCMS/" : "/",
+  pathPrefix: process.env.NODE_ENV === "production" ? "/pre-islamic-afghanistan/" : "/",
   siteMetadata: {
     title: `Pre-Islamic Afghanistan`,
     description: `Archaeology and cultural heritage of pre-Islamic Afghanistan: Sites and materials. With a focus on the Buddhist clay sculptures`,
