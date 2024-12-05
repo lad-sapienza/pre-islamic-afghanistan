@@ -3,17 +3,14 @@ import PropTypes from "prop-types"
 import { RecordContext } from "./record"
 import getDataFromObj from "../../services/transformers/getDataFromObj"
 
-/**
- * Field component retrieves and displays data from the RecordContext.
- * It allows for optional transformation of the data before rendering.
- *
- * @param {Object} props - The component props.
- * @param {Array<string>} props.name - An array of strings representing the keys or indices of the data to retrieve.
- * @param {Function} [props.transformer] - An optional function to transform the retrieved data before rendering.
- *
- * @returns {JSX.Element|null} The rendered component or null if no data is available.
- */
-const Image = ({ name, transformer }) => {
+const Image = ({
+  fieldName,
+  index = 0,
+  dEndPoint = null,
+  preset = null,
+  custom = null,
+  className = null,
+}) => {
   // Retrieve the current value from the RecordContext
   const value = useContext(RecordContext)
 
@@ -23,32 +20,45 @@ const Image = ({ name, transformer }) => {
   }
 
   // Get the relevant data based on the provided name
-  const data = getDataFromObj(value, name)
+  const data = getDataFromObj(value, [fieldName])
 
-  // Render transformed data if transformer is provided, otherwise render the data directly
-  return transformer ? (
-    transformer(data)
-  ) : (
-    <>{typeof data === "string" ? data : JSON.stringify(data)}</>
-  )
-}
+  const showImage = imageData => {
+    let imgPath = dEndPoint ? dEndPoint : process.env.GATSBY_DIRECTUS_ENDPOINT
+    if (!imgPath) {
+      return null
+    }
+    imgPath += `/assets/${imageData.directus_files_id.id}/${imageData.directus_files_id.filename_download}`
 
-// Define prop types for the Field component
-Field.propTypes = {
-  /**
-   * Array containing the index or the indices of the data to return.
-   * Required.
-   * Example: data = {"one": "One Value", "two": ["Two value #1", "Two value 2"]}
-   * name: ["one"] will return "One Value" and name: ["two", "1"] will return "Two value 2".
-   */
-  name: PropTypes.arrayOf(PropTypes.string).isRequired,
+    if (preset) {
+      imgPath += `?key=${preset}`
+    } else if (custom) {
+      imgPath += `?${custom}`
+    }
 
-  /**
-   * A function that receives data as input and performs transformation
-   * or any other type of logic. Can be used, for example, to loop into an array of child data.
-   * Optional. By default, if output data is not a string, JSON.stringify will be applied to returned data.
-   */
-  transformer: PropTypes.func,
+    // Render transformed data if transformer is provided, otherwise render the data directly
+    return (
+      <img
+        src={imgPath}
+        alt={
+          imageData.directus_files_id.description
+            ? imageData.directus_files_id.description
+            : imageData.directus_files_id.filename_download
+        }
+        className={className ? className : null}
+      />
+    )
+  }
+
+  if (index === "all") {
+    return (
+      <>
+        {data.map((img, key) => (
+          <React.Fragment key={key}>{showImage(img)}</React.Fragment>
+        ))}
+      </>
+    )
+  }
+  return showImage(data[index])
 }
 
 export { Image }
