@@ -49,7 +49,7 @@ const SearchUiAdv = ({ fieldList, processData, operators, connectors }) => {
     <React.Fragment>
       {inputs.length > 1 && (
         <React.Fragment>
-          {Object.entries(connectors).map(([k, v], i) => (
+          {Object.entries(connectors).map(([k, v]) => (
             <Form.Check
               key={k}
               inline
@@ -58,7 +58,7 @@ const SearchUiAdv = ({ fieldList, processData, operators, connectors }) => {
               value={k}
               label={v}
               checked={k === conn}
-              onChange={event => setConn(k)}
+              onChange={event => setConn(event.target.value)}
             />
           ))}
         </React.Fragment>
@@ -72,9 +72,10 @@ const SearchUiAdv = ({ fieldList, processData, operators, connectors }) => {
               value={item.field}
               onChange={event => handleChange(event, index)}
             >
-              {Object.entries(fieldList).map(([k, v], i) => (
-                <option key={i} value={k}>
-                  {v}
+              {Object.entries(fieldList).map(([k, v]) => (
+                <option key={k} value={k}>
+                  {typeof v === "string" ? v : v.label}
+                  {/* Verifico se il valore è stringa o oggetto */}
                 </option>
               ))}
             </Form.Select>
@@ -86,20 +87,38 @@ const SearchUiAdv = ({ fieldList, processData, operators, connectors }) => {
               value={item.operator}
               onChange={event => handleChange(event, index)}
             >
-              {Object.entries(operators).map(([k, v], i) => (
-                <option value={k} key={i}>
+              {Object.entries(operators).map(([k, v]) => (
+                <option key={k} value={k}>
                   {v}
                 </option>
               ))}
             </Form.Select>
           </Col>
+          {/* Campo per i valori */}
           <Col sm>
-            <Form.Control
-              type="input"
-              name="value"
-              value={item.value}
-              onChange={event => handleChange(event, index)}
-            />
+            {fieldList[item.field] &&
+            typeof fieldList[item.field] === "object" &&
+            Array.isArray(fieldList[item.field]?.values) ? (
+              <Form.Select
+                aria-label="Select value"
+                name="value"
+                value={item.value}
+                onChange={event => handleChange(event, index)}
+              >
+                {fieldList[item.field].values.map(value => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </Form.Select>
+            ) : (
+              <Form.Control
+                type="text"
+                name="value"
+                value={item.value}
+                onChange={event => handleChange(event, index)}
+              />
+            )}
           </Col>
           <Col sm>
             {index > 0 && (
