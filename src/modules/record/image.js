@@ -54,7 +54,7 @@ const Image = memo(
 // PropTypes for type checking and documentation
 Image.propTypes = {
   fieldName: PropTypes.string.isRequired, // Required: name of the field to retrieve image data
-  index: PropTypes.oneOf([
+  index: PropTypes.oneOfType([
     PropTypes.oneOf(["all"]) , // Can be "all" to show all images
     PropTypes.number, // Or a specific index for a single image
   ]),
