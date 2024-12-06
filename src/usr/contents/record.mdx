@@ -7,13 +7,18 @@ description: ""
 
 import {Record, Field, Image} from "../../modules/scms.js"
 
-<Record fields="*,images.directus_files_id.*,bibliographical_reference.bibliography_id.short,bibliographical_reference.details">
+<Record fields="*,images.directus_files_id.*,bibliographical_reference.bibliography_id.short,bibliographical_reference.id,bibliographical_reference.details">
   <Image fieldName="images" index="all" preset="thumb300by300" className="shadow mb-1 p-1" />
+
+  ---
+
   - **Site**: <Field name={["site"]} />
   - **Area**: <Field name={["area"]} />
   - **Catalog number**: <Field name={["catno"]} />
   - **Type**: <Field name={["type"]} />
   - **Subject**: <Field name={["subject"]} />
-  - **Subject**: <pre><Field name={["bibliographical_reference"]} /></pre>
+  - **Bibliography**: <ul><Field name={["bibliographical_reference"]} transformer={d => d.map((bib, k) => <li key={k}>{bib.bibliography_id.short}, {bib.details}</li>) }/></ul>
+  
+  ---
   
 </Record>
