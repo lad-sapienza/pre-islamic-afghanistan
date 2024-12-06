@@ -32,10 +32,10 @@ const FooterSection = () => {
               >
                 LAD: Laboratorio di Archeologia Digitale alla Sapienza
               </a>
-              <hr />
-              <p>Copyright and credits: Italian Archaeological Mission in Afghanistan</p>
-              <p><a href="mailto:afiligenzi@unior.it">afiligenzi@unior.it</a></p>
             </p>
+              <hr />
+            <p>Copyright and credits: Italian Archaeological Mission in Afghanistan</p>
+            <p><a href="mailto:afiligenzi@unior.it">afiligenzi@unior.it</a></p>
           </div>
         </div>
       </Container>
