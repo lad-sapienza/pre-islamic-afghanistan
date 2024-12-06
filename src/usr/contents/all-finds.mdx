@@ -10,7 +10,8 @@ import { DataTb } from "../../modules/scms"
 
 <DataTb
   source={{
-    dTable: "sculptures"
+    dTable: "sculptures",
+    dQueryString :"limit=1000&offset=0"
   }}
   striped={true}
   columns={[
@@ -27,7 +28,7 @@ import { DataTb } from "../../modules/scms"
   {
     name: "Catalog number",
     cell: item => (
-          <a href={`../record/?tb=sculptures&id=${item.id}`}>
+          <a href={`../sculpture-details/?tb=sculptures&id=${item.id}`}>
             {item["catno"]} 
           </a>
         ),
