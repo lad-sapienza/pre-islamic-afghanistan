@@ -16,7 +16,7 @@ const FooterSection = () => {
               title="s:CMS a research data oriented CMS build by LAD"
             >
               <StaticImage
-                src="../../images/scms-lad.png"
+                src="../images/scms-lad.png"
                 width={100}
                 quality={80}
                 formats={["AUTO", "WEBP"]}
