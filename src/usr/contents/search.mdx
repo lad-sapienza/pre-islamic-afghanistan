@@ -16,7 +16,7 @@ import { Search } from "../../modules/scms.js"
     dTable: "sculptures"
   }}
   fieldList={{
-    "site": "Site",
+    "site": {"label": "Site", values: ["Butkara I", "Tepe Narenj", "Qol-e-Tut", "Mes Aynak"]},
     "area": "Area",
     "catno": "Catalogue number",
     "type": "Type",
@@ -24,7 +24,7 @@ import { Search } from "../../modules/scms.js"
   }}
     
   resultItemTemplate = { item => {
-    return  <div className="card my-3" key={item.id}>
+    return  <div className="card my-3 col-3" key={item.id}>
       <div className="card-body">
         <h5 className="card-title">{item.catno} — {item.site}</h5>
         <div className="card-text">
