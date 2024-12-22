@@ -7,35 +7,9 @@ menu_position: 3
 ---
 
 import { Search } from "../../modules/scms.js"
+import UiSearch from "../modules/uiSearch.js"
 
 
 # Search the database
 
-<Search
-  source={{
-    dTable: "sculptures"
-  }}
-  fieldList={{
-    "site": {"label": "Site", values: ["Butkara I", "Tepe Narenj", "Qol-e-Tut", "Mes Aynak"]},
-    "area": "Area",
-    "catno": "Catalogue number",
-    "type": "Type",
-    "subject": "Subject"
-  }}
-    
-  resultItemTemplate = { item => {
-    return  <div className="card my-3 col-3" key={item.id}>
-      <div className="card-body">
-        <h5 className="card-title">{item.catno} — {item.site}</h5>
-        <div className="card-text">
-        <div>
-          Type: {item.type}<br />
-          Subject: {item.subject}
-          <hr />
-          <a href={`../sculpture-details/?tb=sculptures&id=${item.id}`} className="btn btn-primary">View record</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  }}
-/>
+<UiSearch />

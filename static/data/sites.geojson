@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "name": "ksa",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "site": "Mes Aynak"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3478362,
+          34.4001474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site": "Butkara I"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.3653233,
+          34.7657433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site": "Qol-e-Tut"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.0122003,
+          34.4650167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site": "Tepe Narenj"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.179314,
+          34.4919766
+        ]
+      }
+    }
+  ]
+}
