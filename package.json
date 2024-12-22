@@ -2,7 +2,7 @@
   "name": "@lad-sapienza/scms",
   "private": false,
   "description": "A simple starter to get up and developing quickly with Gatsby 5 and Bootstrap 5",
-  "version": "4.5.2",
+  "version": "4.6.0",
   "author": {
     "name": "Julian Bogdani",
     "email": "julian.bogdani@uniroma1.it",
@@ -25,6 +25,7 @@
     "babel-plugin-styled-components": "^2.1.4",
     "bootstrap": "^5.3.3",
     "csvtojson": "^2.0.10",
+    "d3": "^7.9.0",
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
@@ -49,7 +50,8 @@
     "react-leaflet": "^4.2.1",
     "react-map-gl": "^7.1.7",
     "react-router-dom": "^6.27.0",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "viz.js": "^2.1.2"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
