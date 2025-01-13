@@ -1,15 +1,19 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Container } from "react-bootstrap"
+import { StaticImage } from "gatsby-plugin-image"
 
 const HeaderSection = ({ siteTitle }) => (
   <Header>
     <Container>
       <div className="d-sm-flex align-items-center text-center">
         <div className="text-start ms-3">
-          <img
-            src="https://db.lad-sapienza.it/narenj/assets/5183a061-2f31-4929-b86b-0cbeda06d1ff?fit=cover&width=1500&height=350&quality=50"
-            className="img-fluid"
+          <StaticImage
+            src="../images/header-image.jpg"  
+            quality={80}
+            width={2500}
+            formats={["AUTO", "WEBP"]}
+            className="img-fluid mb-3"
             alt="Pre-Islamic Afghanistan"
           />
           <h1>Pre-Islamic Afghanistan</h1>
@@ -26,14 +30,6 @@ const HeaderSection = ({ siteTitle }) => (
 const Header = styled.header`
   background-color: #ebebeb;
   margin-bottom: 5rem;
-
-  .gatsby-image-wrapper {
-    background-color: #ffffff;
-    img {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
 `
 
 export default HeaderSection
