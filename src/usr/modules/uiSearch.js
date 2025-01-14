@@ -12,12 +12,12 @@ const UiSearch = () => {
     <Search
       source={{
         dTable: "sculptures",
-        dQueryString: "limit=-1"
+        dQueryString: `limit=-1&filter=${JSON.stringify({"site": {"_nin": ["Butkara I", "Mes Aynak"]}})}`
       }}
       fieldList={{
         site: {
           label: "Site",
-          values: ["Butkara I", "Tepe Narenj", "Qol-e-Tut", "Mes Aynak"],
+          values: ["Tepe Narenj", "Qol-e-Tut"],
         },
         area: "Area",
         catno: "Catalogue number",
