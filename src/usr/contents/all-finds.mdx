@@ -7,6 +7,7 @@ menu_position: 4
 ---
 
 import { DataTb } from "../../modules/scms"
+import { withPrefix } from "gatsby"
 
 <DataTb
   source={{
@@ -28,7 +29,7 @@ import { DataTb } from "../../modules/scms"
   {
     name: "Catalog number",
     cell: item => (
-          <a href={`../sculpture-details/?tb=sculptures&id=${item.id}`}>
+          <a href={withPrefix(`sculpture-details/?tb=sculptures&id=${item.id}`)}>
             {item["catno"]} 
           </a>
         ),

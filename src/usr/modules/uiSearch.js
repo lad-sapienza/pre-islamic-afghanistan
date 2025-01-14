@@ -1,5 +1,6 @@
 import React from "react"
 import { Search } from "../../modules/scms"
+import { withPrefix } from "gatsby"
 
 const UiSearch = () => {
   return (
@@ -38,7 +39,7 @@ const UiSearch = () => {
                   Subject: {item.subject}
                   <hr />
                   <a
-                    href={`../sculpture-details/?tb=sculptures&id=${item.id}`}
+                    href={withPrefix(`sculpture-details/?tb=sculptures&id=${item.id}`)}
                     className="btn btn-primary"
                   >
                     View record
