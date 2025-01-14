@@ -162,8 +162,7 @@ VectorLayerLibre.propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * A string containing the HTML to render in the popup. Variable props can be injected using ${field_name} syntax
-   * Optional
+   * The template for the popup content. It is a string and variable properties can be used using ${field_name} syntax
    */
   popupTemplate: PropTypes.string,
   /**
